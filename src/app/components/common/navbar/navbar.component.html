@@ -1,0 +1,35 @@
+<mat-toolbar>
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>UserAPI</span>
+  <span class="spacer"></span>
+  <!-- <button mat-icon-button>
+    <mat-icon>favorite</mat-icon>
+  </button> -->
+  <button 
+    mat-icon-button 
+    matTooltip="login"
+    matTooltipPosition="below">
+    <mat-icon (click)="openDialog()">person_outline</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <p>Side Navbar</p>
+    <p *ngIf="showHiddenText">Surprise Text.</p>
+    <button (click)="showHiddenText = !showHiddenText" mat-raised-button>
+      Toggle for surprise
+    </button>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <mat-grid-list class="title" cols="1" rowHeight="100px">
+      <mat-grid-tile>
+        <app-home></app-home>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+</mat-drawer-container>
