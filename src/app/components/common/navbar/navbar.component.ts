@@ -15,7 +15,11 @@ export class HomeComponent { }
   templateUrl: '../login/login.component.html',
   styleUrls: ['../login/login.component.scss']
 })
-export class LoginComponent { }
+export class LoginComponent { 
+  clickFunction() {
+    alert("clicked me!");
+  }
+}
 
 @Component({
   selector: 'app-navbar',
@@ -50,7 +54,6 @@ export class NavbarComponent implements OnInit {
 
 @NgModule({
   declarations: [
-    LoginComponent,
     HomeComponent
   ],
   imports: []

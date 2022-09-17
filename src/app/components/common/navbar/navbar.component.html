@@ -10,8 +10,9 @@
   <button 
     mat-icon-button 
     matTooltip="login"
-    matTooltipPosition="below">
-    <mat-icon (click)="openDialog()">person_outline</mat-icon>
+    matTooltipPosition="below"
+    (click)="openDialog()">
+    <mat-icon>person_outline</mat-icon>
   </button>
 </mat-toolbar>
 
@@ -27,7 +28,7 @@
   <div class="sidenav-content">
     <mat-grid-list class="title" cols="1" rowHeight="100%">
       <mat-grid-tile>
-        <app-home></app-home>
+        <router-outlet></router-outlet>
       </mat-grid-tile>
     </mat-grid-list>
   </div>

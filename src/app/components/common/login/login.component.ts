@@ -6,8 +6,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  
+  //Data
 
+  //Constructor
+  constructor() { }
+
+  //Methods
+  clickFunction() {
+    alert("clicked me!");
+  }
+ 
+  ngOnInit(): void {}
 }
