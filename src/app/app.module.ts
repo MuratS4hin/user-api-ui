@@ -16,9 +16,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HomeComponent } from './components/home/home.component';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { LoginComponent } from './components/common/login/login.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -38,9 +41,14 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatGridListModule,
     HttpClientModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
