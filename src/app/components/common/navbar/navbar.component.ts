@@ -1,25 +1,8 @@
 import { NgModule, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-
+import { LoginComponent } from '../login/login.component';
+import { HomeComponent } from '../../home/home.component';
 //Module
-
-@Component({
-  selector: 'app-home',
-  templateUrl: '../../home/home.component.html',
-  styleUrls: ['../../home/home.component.scss']
-})
-export class HomeComponent { }
-
-@Component({
-  selector: 'app-login',
-  templateUrl: '../login/login.component.html',
-  styleUrls: ['../login/login.component.scss']
-})
-export class LoginComponent { 
-  clickFunction() {
-    alert("clicked me!");
-  }
-}
 
 @Component({
   selector: 'app-navbar',
@@ -44,7 +27,9 @@ export class NavbarComponent implements OnInit {
   openDialog(): void {
     this.dialog.open(LoginComponent, {
       width: '250px',
-      data: { name: this.username, animal: this.password },
+      data: { 
+        name: this.username, 
+        password: this.password },
     });
   }
 
@@ -54,7 +39,8 @@ export class NavbarComponent implements OnInit {
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: []
 })
