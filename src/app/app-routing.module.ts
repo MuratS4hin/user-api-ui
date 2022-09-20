@@ -6,17 +6,17 @@ import { RegisterComponent } from './components/common/register/register.compone
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: '/login',
-  //   pathMatch: 'full'
-  // },
   {
-    path: "",
+    path: '',
     component: NavbarComponent,
     children: [
       {
         path: "",
+        pathMatch: 'full',
+        redirectTo: '/login',
+      },
+      {
+        path: "login",
         component: LoginComponent
       },
       {

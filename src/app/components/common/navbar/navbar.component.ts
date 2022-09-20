@@ -10,6 +10,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { RegisterComponent } from '../register/register.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @Component({
@@ -26,31 +28,22 @@ export class NavbarComponent implements OnInit {
   loading = false;
 
   //Constructor
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
+  // constructor(public dialog: MatDialog) { }
 
   //Methods
   public openMenu() {
     console.log("open menu");
   }
 
-  openDialog(): void {
-    this.dialog.open(LoginComponent, {
-      width: '250px',
-      data: {
-        name: this.username,
-        password: this.password
-      },
-    });
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
 
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     MatButtonModule,
@@ -58,7 +51,8 @@ export class NavbarComponent implements OnInit {
     MatGridListModule,
     FormsModule,
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    MatRadioModule
   ]
 })
 export class a { }

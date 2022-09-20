@@ -3,7 +3,7 @@
         <form (ngSubmit)="onSubmit()">
             <h3>Login</h3>
             <div *ngIf="submitted && Error" class="invalid-feedback">
-                <h5>Please control your infromations</h5>
+                <h5 class="error" style="color:rgb(192, 84, 84)" [@shake]="showAnimation">Please control your infromations</h5>
             </div>
     
             <label for="username">Email</label>
