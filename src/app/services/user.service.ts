@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/user.model';
+import { UserModel } from '../models/user.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -17,10 +17,10 @@ export class UserService {
     // }
 
     login(email: any, password: any) {
-        return this.http.post<User>(`https://localhost:50188/api/Users/Login`, { email, password })
+        return this.http.post<UserModel>(`https://localhost:50188/api/Users/Login`, { email, password })
     }
     register(name: any, password: any, email: any, birthday: any, usersRole: any) {
-        return this.http.post<User>(`https://localhost:50188/api/Users/`, { name, password, email, birthday, usersRole })
+        return this.http.post<UserModel>(`https://localhost:50188/api/Users/`, { name, password, email, birthday, usersRole })
     }
     // logout() {
     //     // remove user from local storage and set current user to null
