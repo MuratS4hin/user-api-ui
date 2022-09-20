@@ -7,11 +7,7 @@
   <!-- <button mat-icon-button>
     <mat-icon>favorite</mat-icon>
   </button> -->
-  <button 
-    mat-icon-button 
-    matTooltip="login"
-    matTooltipPosition="below"
-    (click)="openDialog()">
+  <button mat-icon-button matTooltip="login" matTooltipPosition="below" (click)="openDialog()">
     <mat-icon>person_outline</mat-icon>
   </button>
 </mat-toolbar>
@@ -26,11 +22,6 @@
   </mat-drawer>
 
   <div class="sidenav-content">
-    <mat-grid-list class="title" cols="1" rowHeight="100%">
-      <mat-grid-tile>
-        <router-outlet></router-outlet>
-      </mat-grid-tile>
-    </mat-grid-list>
+    <router-outlet></router-outlet>
   </div>
-
 </mat-drawer-container>

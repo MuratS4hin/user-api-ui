@@ -1,16 +1,24 @@
 <div class="card">
-    <h4 class="card-header">Login</h4>
     <div class="card-body">
-        <form>
-            <h3>Login Here</h3>
+        <form (ngSubmit)="onSubmit()">
+            <h3>Login</h3>
+            <div *ngIf="submitted && Error" class="invalid-feedback">
+                <h5>Please control your infromations</h5>
+            </div>
     
-            <label for="username">Username</label>
-            <input type="text" placeholder="Email or Phone" id="username">
+            <label for="username">Email</label>
+            <input [(ngModel)]="Email" name="text" class="form-control" />
     
             <label for="password">Password</label>
-            <input type="password" placeholder="Password" id="password">
+            <input [(ngModel)]="Password" name="password" class="form-control" />
     
-            <button (click)="clickFunction()">Log In</button>
+            <button (click)="onSubmit()" [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Log In
+            </button>
+            <p style="margin-top: 20px">Don't you have an account ?
+                <a href="/register" style="color:rgb(0, 225, 255)">register</a>
+            </p>
         </form>
     </div>
 </div>
