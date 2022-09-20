@@ -3,41 +3,39 @@
         <form (ngSubmit)="onSubmit()">
             <h3>Register Here</h3>
             <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" formControlName="firstName" class="form-control" />
-                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" formControlName="lastName" class="form-control" />
-                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" formControlName="username" class="form-control" />
-                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                    <div *ngIf="f.username.errors.required">Username is required</div>
-                </div>
+                <label for="firstName">Name</label>
+                <input [(ngModel)]="Name" name="Name" type="text" class="form-control" />
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" formControlName="password" class="form-control" />
-                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                    <div *ngIf="f.password.errors.required">Password is required</div>
-                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-                </div>
+                <input [(ngModel)]="Password" name="Password" type="text" class="form-control" />
             </div>
             <div class="form-group">
-                <button [disabled]="loading" class="btn btn-primary">
+                <label for="email">Email</label>
+                <input [(ngModel)]="Email" name="Email" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="birthday">Birthday</label>
+                <input [(ngModel)]="Birthday" name="Birthday" type="text" class="form-control" />
+            </div>
+            <div class="radiobutton">
+                <mat-radio-group [(ngModel)]="UsersRole" name="userrole" aria-labelledby="Select an option">
+                    <span>Role:</span>
+                    &nbsp;&nbsp;                    
+                    <mat-radio-button value="Admin">Admin</mat-radio-button>
+                    &nbsp;&nbsp;&nbsp;
+                    <mat-radio-button value="User">User</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="form-group">
+                <button (click)="onSubmit()" [disabled]="loading" class="btn btn-primary">
                     <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                     Register
                 </button>
-                <!-- <a routerLink="../login" class="btn btn-link">Cancel</a> -->
             </div>
+            <p style="margin-top: 20px">Login with your account
+                <a href="/login" style="color:rgb(0, 225, 255)">login</a>
+            </p>
         </form>
     </div>
 </div>

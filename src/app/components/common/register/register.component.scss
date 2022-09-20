@@ -12,12 +12,12 @@ body {
 
 
 form {
-    height: 600px;
+    height: 700px;
     width: 400px;
     background-color: rgba(75, 75, 75, 0.664);
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 50%;
+    top: 40%;
     left: 50%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
@@ -39,11 +39,12 @@ form h3 {
     font-weight: 500;
     line-height: 42px;
     text-align: center;
+    margin: 10px 0 0 0;
 }
 
 label {
     display: block;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 16px;
     font-weight: 500;
 }
@@ -65,7 +66,7 @@ input {
 }
 
 button {
-    margin-top: 30px;
+    margin-top: 40px;
     width: 100%;
     background-color: #2b2b2b;
     padding: 15px 0;
@@ -73,4 +74,9 @@ button {
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.radiobutton {
+    margin-top: 20px;
+    margin-left: auto;
 }

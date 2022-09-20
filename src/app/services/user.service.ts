@@ -10,7 +10,7 @@ export class UserService {
     constructor(
         private router: Router,
         private http: HttpClient
-    ) {}
+    ) { }
 
     // public get userValue(): User {
     //     return this.userSubject.value;
@@ -18,6 +18,9 @@ export class UserService {
 
     login(email: any, password: any) {
         return this.http.post<User>(`https://localhost:50188/api/Users/Login`, { email, password })
+    }
+    register(name: any, password: any, email: any, birthday: any, usersRole: any) {
+        return this.http.post<User>(`https://localhost:50188/api/Users/`, { name, password, email, birthday, usersRole })
     }
     // logout() {
     //     // remove user from local storage and set current user to null
