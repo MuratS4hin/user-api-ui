@@ -20,28 +20,32 @@ export class HomeComponent implements OnInit {
 
   //Data
   dataSource: any;
-  reqId: string | undefined;
-  displayedColumns: string[] = ['id', 'name', 'email', 'birthday', 'userRole'];
+  // reqId: string | undefined;
+  displayedColumns: string[] = ['name', 'email', 'birthday', 'userRole', 'GetUsersInfo', 'UpdateUser', 'DeleteUser'];
   userById: any;
   //Constructor
   constructor(private http: HttpClient) { }
 
   //Methods
-  getUsers() {
-    this.http.get('https://localhost:50188/api/Users').subscribe((result => { 
-      console.log(result) 
-      this.dataSource = result;
-    }))
-  }
+  // getUsers() {
+  //   this.http.get('https://localhost:50188/api/Users').subscribe((result => { 
+  //     console.log(result) 
+  //     this.dataSource = result;
+  //   }))
+  // }
 
-  getUsersById() {
-    this.http.get('https://localhost:50188/api/Users/' + this.reqId).subscribe((result => { 
+  getUsersById(id: any) {
+    this.http.get('https://localhost:50188/api/Users/' +id).subscribe((result => { 
       console.log(result) 
       this.userById = result;
     }))
   }
 
   ngOnInit(): void {
+    this.http.get('https://localhost:50188/api/Users').subscribe((result => { 
+      console.log(result) 
+      this.dataSource = result;
+    }))
   }
 
 }
