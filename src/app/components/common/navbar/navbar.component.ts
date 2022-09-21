@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { RegisterComponent } from '../register/register.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 
 
 @Component({
@@ -36,7 +38,7 @@ export class NavbarComponent implements OnInit {
     console.log("open menu");
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
 
 @NgModule({
@@ -52,7 +54,9 @@ export class NavbarComponent implements OnInit {
     FormsModule,
     CommonModule,
     BrowserModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTableModule,
+    MatCardModule
   ]
 })
 export class a { }
