@@ -17,11 +17,15 @@ export class UserService {
     // }
 
     login(email: any, password: any) {
-        return this.http.post<UserModel>(`https://localhost:50188/api/Users/Login`, { email, password })
+        return this.http.post<string>(`https://localhost:50188/api/Users/Login`, { email, password })
     }
     register(name: any, password: any, email: any, birthday: any, usersRole: any) {
         return this.http.post<UserModel>(`https://localhost:50188/api/Users/`, { name, password, email, birthday, usersRole })
     }
+    // update(id: any, name: any, password: any, email: any, birthday: any, userRole: any){
+    //     debugger;
+    //     return this.http.put<UserModel>(`https://localhost:50188/api/Users/` + id, { Name: name, Password: password, Email: email, Birthday: birthday, UserRole: userRole})
+    // }
     // logout() {
     //     // remove user from local storage and set current user to null
     //     localStorage.removeItem('user');

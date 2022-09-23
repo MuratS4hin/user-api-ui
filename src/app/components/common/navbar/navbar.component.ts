@@ -14,6 +14,7 @@ import { RegisterComponent } from '../register/register.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @Component({
@@ -56,7 +57,8 @@ export class NavbarComponent implements OnInit {
     BrowserModule,
     MatRadioModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    MatTooltipModule
   ]
 })
 export class a { }
